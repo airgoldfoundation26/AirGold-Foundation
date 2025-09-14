@@ -37,21 +37,54 @@
     h2 {
       color: #0077b6;
     }
-    .contact {
-      line-height: 1.8;
-    }
-    .whatsapp-btn {
-      display: inline-block;
-      margin-top: 15px;
-      background: #25D366;
+    .cover {
+      background: url('https://images.unsplash.com/photo-1508182311256-e3f7d02befd4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+      height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       color: white;
-      padding: 12px 18px;
-      border-radius: 6px;
+      font-size: 28px;
+      font-weight: bold;
+      text-shadow: 2px 2px 5px black;
+    }
+    .donate {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .donate button {
+      background: #0077b6;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      margin: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .donate button:hover {
+      background: #023e8a;
+    }
+    footer {
+      background: #0077b6;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+    }
+    .whatsapp a {
+      background: #25d366;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 50px;
       text-decoration: none;
       font-weight: bold;
-    }
-    .whatsapp-btn:hover {
-      background: #1ebe5b;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
     }
   </style>
 </head>
@@ -62,34 +95,38 @@
     <p>Flood Relief & Support</p>
   </header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <div class="cover">
+    Together for Humanity 🌍
+  </div>
 
-  <section id="about">
+  <section>
     <h2>About Us</h2>
     <p>
-      AirGold Foundation is a non-profit organization dedicated to supporting 
-      communities affected by floods. Our mission is to provide emergency relief, 
-      food supplies, clean water, and medical assistance to families in need.  
-      Together, we can bring hope and rebuild lives.
+      AirGold Foundation is dedicated to helping flood-affected families with relief, support, and rehabilitation.
+      Our mission is to bring hope, food, and shelter to those who lost everything in floods.
     </p>
   </section>
 
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <div class="contact">
-      <p><strong>Email:</strong> airgoldfoundation@gmail.com</p>
-      <p><strong>Phone:</strong> +92 306 2177789</p>
-    </div>
-    <a 
-      class="whatsapp-btn" 
-      href="https://wa.me/923062177789?text=Hello%20AirGold%20Foundation,%20I%20want%20to%20support%20your%20flood%20relief%20work." 
-      target="_blank">
-      📲 WhatsApp
-    </a>
+  <section class="donate">
+    <h2>Donate Now</h2>
+    <p>Your small help can bring a big change.</p>
+    <button onclick="alert('Donate via Easypaisa: 03432892969 - MUHAMMAD BILAL')">Donate via Easypaisa</button>
+    <button onclick="alert('Donate via Faysal Bank: 3040301000003064 - AirGold')">Donate via Faysal Bank</button>
   </section>
+
+  <section>
+    <h2>Contact Us</h2>
+    <p>Email: <a href="mailto:airgold2023@gmail.com">airgold2023@gmail.com</a></p>
+    <p>Phone: +92 306 2177789</p>
+  </section>
+
+  <footer>
+    <p>© 2025 AirGold Foundation | All Rights Reserved</p>
+  </footer>
+
+  <div class="whatsapp">
+    <a href="https://wa.me/923062177789?text=Hello%20AirGold%20Foundation%2C%20I%20want%20to%20support%20your%20flood%20relief%20work." target="_blank">💬 WhatsApp Us</a>
+  </div>
 
 </body>
 </html>
