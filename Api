@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Donate — AirGold Foundation (Demo)</title>
+  <style>
+    body{font-family:Arial,Helvetica,sans-serif;background:#f3f6f8;margin:0;padding:20px}
+    .card{max-width:520px;margin:40px auto;background:#fff;padding:20px;border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,0.06)}
+    input,select{width:100%;padding:10px;margin:8px 0;border:1px solid #ddd;border-radius:6px}
+    button{background:#0077b6;color:#fff;border:none;padding:12px 18px;border-radius:6px;font-weight:bold;cursor:pointer}
+    .small{font-size:13px;color:#555}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Donate to AirGold Foundation (Demo)</h2>
+    <p class="small">This is a demo checkout. No actual money will be charged.</p>
+
+    <label>Donation Amount (PKR)</label>
+    <input id="amount" type="number" min="50" value="100">
+
+    <label>Your Name</label>
+    <input id="name" type="text" placeholder="Your full name">
+
+    <label>Your Email</label>
+    <input id="email" type="email" placeholder="you@example.com">
+
+    <label>Payment Method</label>
+    <select id="method">
+      <option value="easypaisa">Easypaisa (redirect)</option>
+      <option value="faysal">Bank Transfer (info shown)</option>
+    </select>
+
+    <div style="margin-top:14px; text-align:center;">
+      <button id="pay">Proceed to Pay (Demo)</button>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('pay').addEventListener('click', function(){
+      const amt = Number(document.getElementById('amount').value) || 0;
+      const name = document.getElementById('name').value || 'Anonymous';
+      const email = document.getElementById('email').value || '';
+      const method = document.getElementById('method').value;
+
+      // Demo behaviour:
+      if(method === 'easypaisa'){
+        // In real integration you'd redirect to the provider with merchant parameters.
+        // Here we simulate by going to success page with query params.
+        const params = new URLSearchParams({amt, name, email, method});
+        window.location.href = 'donate-success.html?' + params.toString();
+      } else {
+        // Bank transfer - show account details then navigate to success page
+        alert('Please transfer to Faysal Bank — Account: 3040301000003064 (AirGold). After transfer click OK to continue to confirmation.');
+        const params = new URLSearchParams({amt, name, email, method});
+        window.location.href = 'donate-success.html?' + params.toString();
+      }
+    });
+  </script>
+</body>
+</html>
